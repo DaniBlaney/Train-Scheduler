@@ -23,14 +23,14 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Train Name</th>
-          <th scope="col">Desitination</th>
-          <th scope="col">Frequency (min)</th>
-          <th scope="col">Next Arrival</th>
-          <th scope="col">Minutes Away</th>
+          <th scope="col" class="train">Train Name</th>
+          <th scope="col" class ="destination">Desitination</th>
+          <th scope="col" class ="frequency">Frequency (min)</th>
+          <th scope="col" class ="nextArrival">Next Arrival</th>
+          <th scope="col" class ="minutesAway">Minutes Away</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id  = "trainView">
         <tr>
           <td scope="row">Trenton Express</td>
           <td>Trenton</td>
@@ -59,27 +59,27 @@
     <form>
       <div class="form-group">
         <label for="searchTerms">Train Name</label>
-        <input type="search" class="form-control" id="data-name" aria-describedby="search">
+        <input type="search" class="form-control data-name" aria-describedby="search">
       </div>
       <div>
         <label for="records">Destination</label>
-        <input type="records" class="form-control" id="data-role">
+        <input type="records" class="form-control data-destination">
       </div>
       <div>
         <label for="records">First Train Time (HH:mm - military time)</label>
-        <input type="records" class="form-control" id="data-start-date">
+        <input type="records" class="form-control data-time">
       </div>
       <div>
         <label for="records">Frequency (min)</label>
-        <input type="records" class="form-control" id="data-monthly-rate">
+        <input type="records" class="form-control data-frequency">
       </div>
-      <button type="submit" class=" submit btn btn-secondary">Submit</button>
+      <button type="submit" class=" submit btn btn-secondary" id = "add-train">Submit</button>
     </form>
   </div>
   <footer>
       <p>© 2019 - Site Built By Ms. Danielle Blaney</p>
   </footer>
 <script src="https://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="assets/app.js"></script>
 </body>
 </html>
