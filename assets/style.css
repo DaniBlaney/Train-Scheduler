@@ -1,0 +1,35 @@
+.jumbotron {
+  text-align: center;
+  background-image: url('train.jpg');
+
+}
+h1 {
+  color:white;
+  text-shadow: 5px 5px black;
+}
+p.lead {
+  color:white;
+  text-shadow: 2px 2px black;
+}
+h4 {
+  font-size: 25px;
+  border-bottom: 2px solid black;
+  margin: 5px;
+  background-color:#c5e8e8;
+}
+body {
+  background-color: #7f97ad91;
+}
+form{
+  padding: 5px;
+}
+input{
+  margin: 5px;
+}
+table{
+  padding: 5px;
+}
+footer{
+  color: black;
+  text-align: center;
+}
