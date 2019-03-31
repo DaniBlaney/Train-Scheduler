@@ -33,8 +33,8 @@
       dataAdded: firebase.database.ServerValue.TIMESTAMP
 
     });
-    
-    $("#trainView").appendTo("<tr><td>"+ childSnapshot.val().trainName +
+
+    $(".trainView").appendTo("<tr><td>"+ childSnapshot.val().trainName +
     "</td><td>" + childSnapshot.val().destination +
     "</td><td>" + childSnapshot.val().frequency +
     "</td><td>" + nextArrival +
