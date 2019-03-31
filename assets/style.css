@@ -17,24 +17,23 @@ h4 {
   margin: 5px;
   background-color:#c5e8e8;
 }
-th{
+th {
   font-size: large;
   font-weight: bold;
-
 }
 body {
   background-color: #7f97ad91;
 }
-form{
+form {
   padding: 5px;
 }
-input{
+input {
   margin: 5px;
 }
-table{
+table {
   padding: 5px;
 }
-footer{
+footer {
   color: black;
   text-align: center;
 }

@@ -31,11 +31,9 @@
       frequency: frequency,
       trainTime: trainTime,
       dataAdded: firebase.database.ServerValue.TIMESTAMP
-      // console.log(trainInput.trainName);
-      // console.log(trainInput.frequency);
-      // console.log(trainInput.destination);
-      // console.log(trainInput.trainTime);
+
     });
+    
     $("#trainView").appendTo("<tr><td>"+ childSnapshot.val().trainName +
     "</td><td>" + childSnapshot.val().destination +
     "</td><td>" + childSnapshot.val().frequency +
