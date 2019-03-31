@@ -7,7 +7,9 @@
     crossorigin="anonymous">
   <link href="assets/reset.css" rel="stylesheet">
   <link href="assets/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+
   <head>
   <meta charset="utf-8">
   <title>Train Schedule</title>
@@ -24,13 +26,13 @@
       <thead>
         <tr>
           <th scope="col" class="train">Train Name</th>
-          <th scope="col" class ="destination">Desitination</th>
+          <th scope="col" class ="destination">Destination</th>
           <th scope="col" class ="frequency">Frequency (min)</th>
           <th scope="col" class ="nextArrival">Next Arrival</th>
           <th scope="col" class ="minutesAway">Minutes Away</th>
         </tr>
       </thead>
-      <tbody id  = "trainView">
+      <tbody  class= "trainView">
         <tr>
           <td scope="row">Trenton Express</td>
           <td>Trenton</td>
@@ -79,7 +81,7 @@
   <footer>
       <p>© 2019 - Site Built By Ms. Danielle Blaney</p>
   </footer>
-<script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
   <script type="text/javascript" src="assets/app.js"></script>
 </body>
 </html>
