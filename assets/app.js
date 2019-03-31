@@ -41,7 +41,7 @@
     "</td><td>" + childSnapshot.val().frequency +
     "</td><td>" + nextArrival +
     "</td><td>" + minutesAway + "</td></tr>");
-    $("form")[0].reset();
+    // $("form")[0].reset();
   });
 
   database.ref().on("child_added", function(childSnapshot){

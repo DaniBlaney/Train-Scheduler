@@ -17,6 +17,11 @@ h4 {
   margin: 5px;
   background-color:#c5e8e8;
 }
+th{
+  font-size: large;
+  font-weight: bold;
+
+}
 body {
   background-color: #7f97ad91;
 }
