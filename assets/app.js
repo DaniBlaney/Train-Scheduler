@@ -16,14 +16,14 @@
   var frequency = 0;
   var trainTime = "";
 
-  $("#submit").on("click", function(){
+  $("#add-train").on("click", function(event){
     event.preventDefault();
 
-    trainName = $("#data-name").val().trim();
-    destination = $("#data-destination").val().trim();
-    frequency = $("#data-frequency").val().trim();
-    trainTime = $("#data-time").val().trim();
-    // $("<tr>").appendTo("#trainView");
+    trainName = $(".data-name").val().trim();
+    destination = $(".data-destination").val().trim();
+    frequency = $(".data-frequency").val().trim();
+    trainTime = $(".data-time").val().trim();
+    
 
     database.ref().push ({
       trainName: trainName,
@@ -34,26 +34,27 @@
 
     });
 
-    $(".trainView").appendTo("<tr><td>"+ childSnapshot.val().trainName +
-    "</td><td>" + childSnapshot.val().destination +
-    "</td><td>" + childSnapshot.val().frequency +
-    "</td><td>" + nextArrival +
-    "</td><td>" + minutesAway + "</td></tr>");
-    // $("form")[0].reset();
+    $("form")[0].reset();
   });
 
   database.ref().on("child_added", function(childSnapshot){
+    console.log(childSnapshot.val());
     var firstTrain = moment(childSnapshot.val().trainTime, "hh:mm").subtract(1, "years")
     var timeDifference = moment().diff(moment(firstTrain), "minutes");
     var remainder = timeDifference % childSnapshot.val().frequency;
     var minutesAway = childSnapshot.val().frequency - remainder;
     var nextArrival = moment(nextArrival).format("hh:mm");
-    console.log(childSnapshot.val().firstTrain);
-    console.log(childSnapshot.val().timeDifference);
-    console.log(childSnapshot.val().remainder);
-    console.log(childSnapshot.val().minutesAway);
-    console.log(childSnapshot.val().nextArrival);
+    console.log(firstTrain);
+    console.log(timeDifference);
+    console.log(remainder);
+    console.log(minutesAway);
+    console.log(nextArrival);
 
+    $(".trainView").append("<tr><td>"+ childSnapshot.val().trainName +
+    "</td><td>" + childSnapshot.val().destination +
+    "</td><td>" + childSnapshot.val().frequency +
+    "</td><td>" + nextArrival +
+    "</td><td>" + minutesAway + "</td></tr>");
   // $("#trainView > tbody").append("<tr><td>" + '<i class="fa fa-trash" id="trashcan" aria-hidden="true"></i>' + "</td><td>" + train + "</td><td>" + destination + "</td><td>" +
   // frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
 
