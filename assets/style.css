@@ -1,7 +1,10 @@
 .jumbotron {
   text-align: center;
   background-image: url('train.jpg');
+}
 
+#currentTime {
+  align: center;
 }
 h1 {
   color:white;

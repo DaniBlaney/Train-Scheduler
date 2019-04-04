@@ -16,14 +16,20 @@
   var frequency = 0;
   var trainTime = "";
 
+  function currentTime(){
+    var current = moment().format('LT');
+    $("#currentTime").html(current);
+    setTimeout(currentTime, 1000);
+  }
+
   $("#add-train").on("click", function(event){
     event.preventDefault();
 
     trainName = $(".data-name").val().trim();
     destination = $(".data-destination").val().trim();
     frequency = $(".data-frequency").val().trim();
-    trainTime = $(".data-time").val().trim();
-    
+    trainTime = moment($(".data-time").val().trim(), "h:mm a").format("HHmm");
+
 
     database.ref().push ({
       trainName: trainName,
@@ -39,11 +45,11 @@
 
   database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
-    var firstTrain = moment(childSnapshot.val().trainTime, "hh:mm").subtract(1, "years")
+    var firstTrain = moment(childSnapshot.val().trainTime, "hh:mm").subtract(1, "years");
     var timeDifference = moment().diff(moment(firstTrain), "minutes");
     var remainder = timeDifference % childSnapshot.val().frequency;
     var minutesAway = childSnapshot.val().frequency - remainder;
-    var nextArrival = moment(nextArrival).format("hh:mm");
+    var nextArrival = moment(firstTrain).format("hh:mm a");
     console.log(firstTrain);
     console.log(timeDifference);
     console.log(remainder);
@@ -62,5 +68,6 @@
     console.log("Errors handled: " + errorObject.code)
   });
 
+  currentTime();
   // database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
   //    $("#data-name")

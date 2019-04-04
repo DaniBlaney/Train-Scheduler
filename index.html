@@ -18,6 +18,8 @@
           <p class="lead">CHOO CHOO</p>
         </div>
       </div>
+    
+      <p id="currentTime"></p>
   <div class="card-header"> <h4>Current Train Schedule</h4>
     <table class="table table-striped">
       <thead>
@@ -34,21 +36,21 @@
           <td scope="row">Trenton Express</td>
           <td>Trenton</td>
           <td>25</td>
-          <td>05:35 PM</td>
+          <td>05:35 pm</td>
           <td>10</td>
         </tr>
         <tr>
           <td scope="row">Oregon Trail</td>
           <td>Salem, Oregon</td>
           <td>3600</td>
-          <td>01:39 PM</td>
+          <td>01:39 pm</td>
           <td>1154</td>
         </tr>
         <tr>
           <td scope="row">Midnight Carriage</td>
           <td>Philadelphia</td>
           <td>15</td>
-          <td>06:35 PM</td>
+          <td>06:35 pm</td>
           <td>28</td>
         </tr>
       </tbody>
@@ -65,12 +67,12 @@
         <input type="records" class="form-control data-destination">
       </div>
       <div>
-        <label for="records">First Train Time (HH:mm - military time)</label>
-        <input type="records" class="form-control data-time">
+        <label for="time">First Train Time (HH:mm - military time)</label>
+        <input type="time" class="form-control data-time">
       </div>
       <div>
-        <label for="records">Frequency (min)</label>
-        <input type="records" class="form-control data-frequency">
+        <label for="frequency">Frequency (min)</label>
+        <input type="number" class="form-control data-frequency">
       </div>
       <button type="submit" class=" submit btn btn-secondary" id = "add-train">Submit</button>
     </form>
